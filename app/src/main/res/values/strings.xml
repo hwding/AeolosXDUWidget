@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AeolosXDU</string>
+    <string name="configure">账户关联设置</string>
+    <string name="add_widget">验证账户信息</string>
+    <string name="hint_ID">学号</string>
+    <string name="hint_ecard">一卡通密码</string>
+    <string name="hint_spclk">阳光体育密码</string>
+    <string name="hint_phyexp">物理实验选课系统密码</string>
+    <string name="appwidget_text"></string>
+</resources>
