@@ -1,4 +1,4 @@
-# AeolosXDU_Widget
+# AeolosXDUWidget
 显示西电各类查询数据的Android桌面组件
 ###What's new
 正在施工中...
