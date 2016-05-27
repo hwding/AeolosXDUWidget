@@ -1,9 +1,7 @@
 package xdu.hwding.aeolosxdu;
 
 import android.os.Handler;
-
 import java.io.IOException;
-
 import FooPackage.PhysicalExperiment;
 import FooPackage.SportsClock;
 
