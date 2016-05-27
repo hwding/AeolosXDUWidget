@@ -3,9 +3,18 @@ package xdu.hwding.aeolosxdu;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import java.io.File;
+import java.io.IOException;
+import FooPackage.ECard;
+
 
 public class NewAppWidgetConfigureActivity extends Activity {
 
@@ -19,12 +28,20 @@ public class NewAppWidgetConfigureActivity extends Activity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-
         // Set the result to CANCELED.  This will cause the widget host to cancel
         // out of the widget placement if the user presses the back button.
         setResult(RESULT_CANCELED);
         setContentView(R.layout.new_app_widget_configure);
-        findViewById(R.id.add_button).setOnClickListener(mOnClickListener);
+        ImageView captchaImageView = (ImageView) findViewById(R.id.captcha);
+        File file = new File(String.valueOf(android.os.Environment.getExternalStorageDirectory()) +
+                                File.separator + "temp.jpeg");
+        Handler handler = generateHandler(captchaImageView, file);
+        try {
+            CaptchaLoaderThread captchaLoaderThread = new CaptchaLoaderThread(file, handler);
+            captchaLoaderThread.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 //    View.OnClickListener mOnClickListener = new View.OnClickListener() {
@@ -47,18 +64,21 @@ public class NewAppWidgetConfigureActivity extends Activity {
 //        }
 //    };
 
-    View.OnClickListener mOnClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            EditText mID = (EditText) findViewById(R.id.ID);
-            EditText mSportsClock = (EditText) findViewById(R.id.spclk);
-            EditText mphyexp = (EditText) findViewById(R.id.phyexp);
-            CheckThread checkThread = new CheckThread(mID.getText().toString(),
-                                                      mSportsClock.getText().toString(),
-                                                      mphyexp.getText().toString());
-            checkThread.start();
-        }
-    };
+    View.OnClickListener generateOnClickListener(ECard eCard) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText mID = (EditText) findViewById(R.id.ID);
+                EditText mSportsClock = (EditText) findViewById(R.id.spclk);
+                EditText mphyexp = (EditText) findViewById(R.id.phyexp);
+                CheckThread checkThread = new CheckThread(mID.getText().toString(),
+                        mSportsClock.getText().toString(),
+                        mphyexp.getText().toString(),
+                        generateCheckAccountHandler());
+                checkThread.start();
+            }
+        };
+    }
 
     // Write the prefix to the SharedPreferences object for this widget
     static void saveTitlePref(Context context, int appWidgetId, String text) {
@@ -83,6 +103,27 @@ public class NewAppWidgetConfigureActivity extends Activity {
         SharedPreferences.Editor prefs = context.getSharedPreferences(PREFS_NAME, 0).edit();
         prefs.remove(PREF_PREFIX_KEY + appWidgetId);
         prefs.apply();
+    }
+
+    Handler generateHandler(final ImageView imageView, final File file) {
+        return new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                Bitmap bitmap = BitmapFactory.decodeFile(String.valueOf(file));
+                imageView.setImageBitmap(bitmap);
+                findViewById(R.id.add_button).setEnabled(true);
+                findViewById(R.id.add_button).setOnClickListener(generateOnClickListener((ECard) msg.obj));
+            }
+        };
+    }
+
+    Handler generateCheckAccountHandler() {
+        return new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+
+            }
+        };
     }
 }
 

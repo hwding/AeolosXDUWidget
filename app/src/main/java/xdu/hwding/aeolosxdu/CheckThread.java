@@ -9,18 +9,13 @@ public class CheckThread extends Thread{
     String ID;
     String spclk;
     String phyexp;
-    Handler handler;
+    Handler checkAccountHandler;
 
-    /*
-     * TODO
-     *      在libXDUQuery中提供缓存验证码目录的函数参数
-     *      最后验证ECard模块并要求输入验证码
-     */
-
-    CheckThread(String ID, String spclk, String phyexp) {
+    CheckThread(String ID, String spclk, String phyexp, Handler checkAccountHandler) {
         this.ID = ID;
         this.spclk = spclk;
         this.phyexp = phyexp;
+        this.checkAccountHandler = checkAccountHandler;
     }
 
     public void run() {
