@@ -5,20 +5,24 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.widget.RemoteViews;
 
+import FooPackage.ECard;
+
 /**
  * Implementation of App Widget functionality.
  * App Widget Configuration implemented in {@link NewAppWidgetConfigureActivity NewAppWidgetConfigureActivity}
  */
 public class NewAppWidget extends AppWidgetProvider {
 
+    static ECard eCard;
+    static void setCard(ECard eCard) {
+        NewAppWidget.eCard = eCard;
+    }
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
-
-        CharSequence widgetText = NewAppWidgetConfigureActivity.loadTitlePref(context, appWidgetId);
-        // Construct the RemoteViews object
+        //CharSequence widgetText = NewAppWidgetConfigureActivity.loadTitlePref(context, appWidgetId);
+        //Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.new_app_widget);
-        views.setTextViewText(R.id.appwidget_text, widgetText);
-
+        //views.setTextViewText(R.id.appwidget_text, widgetText);
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
@@ -34,9 +38,9 @@ public class NewAppWidget extends AppWidgetProvider {
     @Override
     public void onDeleted(Context context, int[] appWidgetIds) {
         // When the user deletes the widget, delete the preference associated with it.
-        for (int appWidgetId : appWidgetIds) {
-            NewAppWidgetConfigureActivity.deleteTitlePref(context, appWidgetId);
-        }
+//        for (int appWidgetId : appWidgetIds) {
+//            NewAppWidgetConfigureActivity.deleteTitlePref(context, appWidgetId);
+//        }
     }
 
     @Override
