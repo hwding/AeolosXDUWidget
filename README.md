@@ -6,3 +6,4 @@
 AeolosXDUWidget  -->  [libXDUQuery](https://github.com/hwding/libXDUQuery)  -->  [Jsoup](https://jsoup.org)
 ###截图
 ![image](https://github.com/hwding/AeolosXDUWidget/blob/master/screenshots/Screenshot_config.png)
+![image](https://github.com/hwding/AeolosXDUWidget/blob/master/screenshots/Screenshot_layout.png)
