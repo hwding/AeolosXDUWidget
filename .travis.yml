@@ -3,8 +3,9 @@ android:
   components:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
-    # - platform-tools
-    # - tools
+    - platform-tools
+    - tools
+    - extra
 
     # The BuildTools version used by your project
     - build-tools-23.0.3
@@ -13,10 +14,12 @@ android:
     - android-23
 
     # Additional components
-    - extra-google-m2repository
-    - extra-android-m2repository
     - addon-google_apis-google-23
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
     - sys-img-armeabi-v7a-android-23
+    
+  before_install:
+    - android-update-sdk --accept-licenses='android-sdk-license-.+' --components=tools　// ←これ
+    - android-update-sdk --accept-licenses='android-sdk-license-.+' --components=build-tools-23.0.3　// ←これ
