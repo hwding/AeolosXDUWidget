@@ -6,7 +6,16 @@
     <string name="hint_ecard">一卡通密码</string>
     <string name="hint_spclk">阳光体育密码</string>
     <string name="hint_phyexp">物理实验选课系统密码</string>
-    <string name="appwidget_text"></string>
     <string name="captcha">验证码</string>
     <string name="attention">您可能需要在校园网环境下才能完成验证</string>
+    <string name="balance_text">帐户余额</string>
+    <string name="latest_consumption">最近消费</string>
+    <string name="title">AeolosXDU</string>
+    <string name="latest_score">最新成绩</string>
+    <string name="latest_exp">实验名</string>
+    <string name="next_exp">下次实验</string>
+    <string name="location">地点</string>
+    <string name="time">时间</string>
+    <string name="total_clocks">总次数</string>
+    <string name="latest_clock">最近一次</string>
 </resources>

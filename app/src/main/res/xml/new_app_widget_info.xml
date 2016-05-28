@@ -4,10 +4,10 @@
     android:configure="xdu.hwding.aeolosxdu.NewAppWidgetConfigureActivity"
     android:initialKeyguardLayout="@layout/new_app_widget"
     android:initialLayout="@layout/new_app_widget"
-    android:minHeight="110dp"
+    android:minHeight="215dp"
     android:minWidth="250dp"
     android:previewImage="@drawable/example_appwidget_preview"
-    android:resizeMode="horizontal|vertical"
+    android:resizeMode="vertical"
     android:updatePeriodMillis="60000"
     android:widgetCategory="home_screen">
 </appwidget-provider>

@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <EditText
+            android:maxLength="6"
             android:id="@+id/ecard"
             android:hint="@string/hint_ecard"
             android:layout_width="match_parent"
