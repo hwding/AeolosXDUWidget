@@ -64,17 +64,22 @@ public class NewAppWidgetConfigureActivity extends Activity {
 //        }
 //    };
 
-    View.OnClickListener generateOnClickListener(ECard eCard) {
+    View.OnClickListener generateOnClickListener(final ECard eCard) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 EditText mID = (EditText) findViewById(R.id.ID);
                 EditText mSportsClock = (EditText) findViewById(R.id.spclk);
                 EditText mphyexp = (EditText) findViewById(R.id.phyexp);
+                EditText ecard_text = (EditText) findViewById(R.id.ecard);
+                EditText captcha = (EditText) findViewById(R.id.captcha_text);
                 CheckThread checkThread = new CheckThread(mID.getText().toString(),
                         mSportsClock.getText().toString(),
                         mphyexp.getText().toString(),
-                        generateCheckAccountHandler());
+                        ecard_text.getText().toString(),
+                        captcha.getText().toString(),
+                        generateCheckAccountHandler(),
+                        eCard);
                 checkThread.start();
             }
         };
