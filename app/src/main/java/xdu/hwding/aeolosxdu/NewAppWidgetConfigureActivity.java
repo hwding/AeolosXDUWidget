@@ -11,6 +11,8 @@ import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.IOException;
 import FooPackage.ECard;
@@ -73,7 +75,8 @@ public class NewAppWidgetConfigureActivity extends Activity {
                 EditText mphyexp = (EditText) findViewById(R.id.phyexp);
                 EditText ecard_text = (EditText) findViewById(R.id.ecard);
                 EditText captcha = (EditText) findViewById(R.id.captcha_text);
-                CheckThread checkThread = new CheckThread(mID.getText().toString(),
+                CheckThread checkThread = new CheckThread(
+                        mID.getText().toString(),
                         mSportsClock.getText().toString(),
                         mphyexp.getText().toString(),
                         ecard_text.getText().toString(),
@@ -126,7 +129,17 @@ public class NewAppWidgetConfigureActivity extends Activity {
         return new Handler() {
             @Override
             public void handleMessage(Message msg) {
-
+                switch (msg.what) {
+                    case 0:
+                        Toast.makeText(NewAppWidgetConfigureActivity.this, "所有账户关联成功!", Toast.LENGTH_LONG).show();
+                        break;
+                    case -1:
+                        break;
+                    case -2:
+                        break;
+                    case -3:
+                        break;
+                }
             }
         };
     }

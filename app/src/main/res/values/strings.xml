@@ -8,4 +8,5 @@
     <string name="hint_phyexp">物理实验选课系统密码</string>
     <string name="appwidget_text"></string>
     <string name="captcha">验证码</string>
+    <string name="attention">您可能需要在校园网环境下才能完成验证</string>
 </resources>
