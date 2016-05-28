@@ -93,7 +93,7 @@ public class NewAppWidgetConfigureActivity extends Activity {
                                 Toast.LENGTH_LONG).show();
                         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(
                                 NewAppWidgetConfigureActivity.this);
-                        NewAppWidget.setCard((ECard) msg.obj);
+                        NewAppWidget.setProperties((ECard) msg.obj, getApplicationContext());
                         NewAppWidget.updateAppWidget(NewAppWidgetConfigureActivity.this,
                                 appWidgetManager, mAppWidgetId);
                         Intent resultValue = new Intent();
