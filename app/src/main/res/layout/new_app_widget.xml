@@ -41,6 +41,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp">
         <TextView
+            android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:textSize="15sp"
             android:text="@string/balance_text"
@@ -63,6 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp">
         <TextView
+            android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:textSize="15sp"
             android:text="@string/latest_consumption"
@@ -109,6 +111,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/total_clocks"
@@ -131,6 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/latest_clock"
@@ -176,6 +180,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="10dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/latest_score"
@@ -198,6 +203,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/latest_exp"
@@ -220,6 +226,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/next_exp"
@@ -242,6 +249,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/location"
@@ -265,6 +273,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp">
                 <TextView
+                    android:textStyle="bold"
                     android:layout_marginStart="20dp"
                     android:textSize="15sp"
                     android:text="@string/time"
