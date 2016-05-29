@@ -6,8 +6,8 @@
 ###TODO
   - 通过中转服务器转发请求和结果以在处于外网时使用内网服务
 
-###依赖关系
-AeolosXDUWidget  -->  [libXDUQuery](https://github.com/hwding/libXDUQuery)
+###依赖
+[libXDUQuery](https://github.com/hwding/libXDUQuery)
 
 ###预览
 ![image](https://github.com/hwding/AeolosXDUWidget/blob/master/screenshots/Screenshot_a.png)
