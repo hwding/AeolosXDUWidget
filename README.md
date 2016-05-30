@@ -4,7 +4,8 @@
   - 数据测试完成
 
 ###TODO
-  - 通过中转服务器转发请求和结果以在处于外网时使用内网服务
+  - 将一卡通服务中转到外网
+  - 增强稳定性
 
 ###依赖
 [libXDUQuery](https://github.com/hwding/libXDUQuery)
