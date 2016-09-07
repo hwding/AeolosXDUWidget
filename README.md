@@ -1,5 +1,5 @@
 # AeolosXDUWidget
-实时更新你的(西电)校内数据的Android桌面部件
+实时更新西电校内数据的Android桌面部件
 ###What's new
   - 数据测试完成
 
