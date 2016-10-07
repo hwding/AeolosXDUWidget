@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.widget.RemoteViews;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,6 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
+
 import FooPackage.ECard;
 import FooPackage.PhysicalExperiment;
 import FooPackage.SportsClock;
@@ -96,11 +98,16 @@ public class NewAppWidget extends AppWidgetProvider {
                                     FLAG_ne_SET = true;
                                 }
                         }
+
+                        Date nextTime = simpleDateFormat1.parse(stringArrayList1.get(10*nextExpNum+5-1));
+                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("EEEE",Locale.CHINA);
+                        String weekday = simpleDateFormat2.format(nextTime);
+
                         views.setTextViewText(R.id.latest_exp, stringArrayList1.get(10*latestExpNum+2-1));
                         views.setTextViewText(R.id.latest_score, stringArrayList1.get(10*latestExpNum+8-1));
                         views.setTextViewText(R.id.next_exp, stringArrayList1.get(10*nextExpNum+2-1));
                         views.setTextViewText(R.id.location, stringArrayList1.get(10*nextExpNum+6-1));
-                        views.setTextViewText(R.id.next_time, stringArrayList1.get(10*nextExpNum+5-1));
+                        views.setTextViewText(R.id.next_time, stringArrayList1.get(10*nextExpNum+5-1) + "  " + weekday);
                     }
                 }
             } catch (IOException | ParseException e) {
