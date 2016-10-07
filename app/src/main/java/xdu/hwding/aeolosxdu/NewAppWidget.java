@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.widget.RemoteViews;
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,7 +14,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-
 import FooPackage.ECard;
 import FooPackage.PhysicalExperiment;
 import FooPackage.SportsClock;
