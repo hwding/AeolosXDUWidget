@@ -1,4 +1,4 @@
-package xdu.hwding.aeolosxdu;
+package xdu.hwding.aeolosxdu.util;
 
 import android.os.Handler;
 import android.os.Message;
@@ -7,11 +7,11 @@ import java.io.IOException;
 import FooPackage.ECard;
 
 public class CaptchaLoaderThread extends Thread{
-    File file;
-    ECard eCard;
-    Handler handler;
+    private File file;
+    private ECard eCard;
+    private Handler handler;
 
-    CaptchaLoaderThread(File file, Handler handler) throws IOException {
+    public CaptchaLoaderThread(File file, Handler handler) throws IOException {
         this.file = file;
         this.handler = handler;
     }

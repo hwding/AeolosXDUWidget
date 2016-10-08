@@ -1,4 +1,4 @@
-package xdu.hwding.aeolosxdu;
+package xdu.hwding.aeolosxdu.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,16 +11,16 @@ import FooPackage.PhysicalExperiment;
 import FooPackage.SportsClock;
 
 public class CheckThread extends Thread{
-    String ID;
-    String spclk;
-    String phyexp;
-    String ecard_text;
-    String captcha;
-    Handler checkAccountHandler;
-    ECard eCard;
-    Context context;
+    private String ID;
+    private String spclk;
+    private String phyexp;
+    private String ecard_text;
+    private String captcha;
+    private Handler checkAccountHandler;
+    private ECard eCard;
+    private Context context;
 
-    CheckThread(String ID,
+    public CheckThread(String ID,
                 String spclk,
                 String phyexp,
                 String ecard_text,

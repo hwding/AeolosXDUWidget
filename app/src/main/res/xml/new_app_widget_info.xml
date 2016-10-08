@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="xdu.hwding.aeolosxdu.NewAppWidgetConfigureActivity"
+    android:configure="xdu.hwding.aeolosxdu.activity.NewAppWidgetConfigureActivity"
     android:initialKeyguardLayout="@layout/new_app_widget"
     android:initialLayout="@layout/new_app_widget"
     android:minHeight="215dp"

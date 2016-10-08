@@ -1,4 +1,4 @@
-package xdu.hwding.aeolosxdu;
+package xdu.hwding.aeolosxdu.activity;
 
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 import java.io.File;
 import java.io.IOException;
 import FooPackage.ECard;
+import xdu.hwding.aeolosxdu.R;
+import xdu.hwding.aeolosxdu.util.CaptchaLoaderThread;
+import xdu.hwding.aeolosxdu.util.CheckThread;
 
 public class NewAppWidgetConfigureActivity extends Activity {
 
@@ -89,7 +92,7 @@ public class NewAppWidgetConfigureActivity extends Activity {
                 switch (msg.what) {
                     case 0:
                         Toast.makeText(NewAppWidgetConfigureActivity.this,
-                                "所有账户关联成功!",
+                                "所有账户关联成功",
                                 Toast.LENGTH_LONG).show();
                         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(
                                 NewAppWidgetConfigureActivity.this);
@@ -103,7 +106,7 @@ public class NewAppWidgetConfigureActivity extends Activity {
                         break;
                     case -1:
                         Toast.makeText(NewAppWidgetConfigureActivity.this,
-                                "账户验证失败...",
+                                "账户验证失败",
                                 Toast.LENGTH_LONG).show();
                         finish();
                         break;

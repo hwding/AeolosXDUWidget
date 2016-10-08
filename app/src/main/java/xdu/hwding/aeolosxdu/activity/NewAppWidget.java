@@ -1,4 +1,4 @@
-package xdu.hwding.aeolosxdu;
+package xdu.hwding.aeolosxdu.activity;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -17,6 +17,7 @@ import java.util.Locale;
 import FooPackage.ECard;
 import FooPackage.PhysicalExperiment;
 import FooPackage.SportsClock;
+import xdu.hwding.aeolosxdu.R;
 
 /**
  * Implementation of App Widget functionality.
@@ -98,14 +99,14 @@ public class NewAppWidget extends AppWidgetProvider {
                         }
 
                         Date nextTime = simpleDateFormat1.parse(stringArrayList1.get(10*nextExpNum+5-1));
-                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("EEEE",Locale.CHINA);
-                        String weekday = simpleDateFormat2.format(nextTime);
+                        SimpleDateFormat simpleDateFormat2 = new SimpleDateFormat("yyyy-MM-dd EEEE", Locale.CHINA);
+                        String nextTimeString = simpleDateFormat2.format(nextTime);
 
                         views.setTextViewText(R.id.latest_exp, stringArrayList1.get(10*latestExpNum+2-1));
                         views.setTextViewText(R.id.latest_score, stringArrayList1.get(10*latestExpNum+8-1));
                         views.setTextViewText(R.id.next_exp, stringArrayList1.get(10*nextExpNum+2-1));
                         views.setTextViewText(R.id.location, stringArrayList1.get(10*nextExpNum+6-1));
-                        views.setTextViewText(R.id.next_time, stringArrayList1.get(10*nextExpNum+5-1) + "  " + weekday);
+                        views.setTextViewText(R.id.next_time, nextTimeString);
                     }
                 }
             } catch (IOException | ParseException e) {
