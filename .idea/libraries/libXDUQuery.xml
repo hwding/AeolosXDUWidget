@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="libXDUQuery">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/libs/libXDUQuery.jar!/" />
+      <root url="jar://$PROJECT_DIR$/app/lib/libXDUQuery.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import FooPackage.ECard;
-import FooPackage.PhysicalExperiment;
-import FooPackage.SportsClock;
+
+import module.ECard;
+import module.PhysicalExperiment;
+import module.SportsClock;
 
 public class CheckThread extends Thread{
     private String ID;
@@ -45,10 +47,9 @@ public class CheckThread extends Thread{
         boolean phyexp_ok;
         boolean ecard_ok;
         try {
-            spclk_ok = sportsClock.checkIsLogin(sportsClock.login(ID, spclk));
+            spclk_ok = sportsClock.login(ID, spclk);
             phyexp_ok = physicalExperiment.login(ID, phyexp);
-            eCard.login(captcha, ID, ecard_text);
-            ecard_ok = eCard.checkIsLogin(ID);
+            ecard_ok = eCard.login(ID, ecard_text, captcha);
 
             if (spclk_ok && phyexp_ok && ecard_ok) {
                 Message message = new Message();

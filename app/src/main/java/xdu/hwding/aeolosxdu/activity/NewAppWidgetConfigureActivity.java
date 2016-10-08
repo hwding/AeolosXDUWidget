@@ -12,9 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import java.io.File;
 import java.io.IOException;
-import FooPackage.ECard;
+
+import module.ECard;
 import xdu.hwding.aeolosxdu.R;
 import xdu.hwding.aeolosxdu.util.CaptchaLoaderThread;
 import xdu.hwding.aeolosxdu.util.CheckThread;

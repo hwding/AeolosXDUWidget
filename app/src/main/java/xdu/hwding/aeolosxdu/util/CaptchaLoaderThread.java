@@ -2,9 +2,11 @@ package xdu.hwding.aeolosxdu.util;
 
 import android.os.Handler;
 import android.os.Message;
+
 import java.io.File;
 import java.io.IOException;
-import FooPackage.ECard;
+
+import module.ECard;
 
 public class CaptchaLoaderThread extends Thread{
     private File file;

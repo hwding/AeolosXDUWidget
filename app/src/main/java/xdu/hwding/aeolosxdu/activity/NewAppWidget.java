@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.widget.RemoteViews;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,9 +15,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
-import FooPackage.ECard;
-import FooPackage.PhysicalExperiment;
-import FooPackage.SportsClock;
+
+import module.ECard;
+import module.PhysicalExperiment;
+import module.SportsClock;
 import xdu.hwding.aeolosxdu.R;
 
 /**
@@ -53,7 +55,7 @@ public class NewAppWidget extends AppWidgetProvider {
                 Calendar calendarLastMonth = GregorianCalendar.getInstance();
                 calendarLastMonth.add(Calendar.MONTH, -1);
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
-                eCard_strs = eCard.queryTransferInfo(
+                eCard_strs = eCard.query(
                         simpleDateFormat.format(calendarLastMonth.getTime()),
                         simpleDateFormat.format(calendar.getTime()));
                 views.setTextViewText(R.id.balance, "￥ "+eCard_strs.get(4));
@@ -64,7 +66,7 @@ public class NewAppWidget extends AppWidgetProvider {
                         sharedPreferences.getString("spclk", ""));
                 ArrayList<String> stringArrayList = null;
                 if (sportsClock.checkIsLogin(sharedPreferences.getString("ID", "")))
-                    stringArrayList = sportsClock.queryAchievements();
+                    stringArrayList = sportsClock.query();
                 if (stringArrayList != null) {
                     views.setTextViewText(R.id.latest_clock, stringArrayList.get(stringArrayList.size()-4));
                     views.setTextViewText(R.id.total_clocks, String.valueOf(stringArrayList.size()/5));
@@ -76,7 +78,7 @@ public class NewAppWidget extends AppWidgetProvider {
                         sharedPreferences.getString("ID", ""),
                         sharedPreferences.getString("phyexp", "")
                 )) {
-                    stringArrayList1 = physicalExperiment.queryAchievements();
+                    stringArrayList1 = physicalExperiment.query();
                     if (stringArrayList1.size()!=0) {
                         boolean FLAG_le_SET = false;
                         boolean FLAG_ne_SET = false;
@@ -132,9 +134,6 @@ public class NewAppWidget extends AppWidgetProvider {
                           int[] appWidgetIds) {
 
         // When the user deletes the widget, delete the preference associated with it.
-//        for (int appWidgetId : appWidgetIds) {
-//            NewAppWidgetConfigureActivity.deleteTitlePref(context, appWidgetId);
-//        }
     }
 
     @Override
